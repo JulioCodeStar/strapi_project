@@ -1,0 +1,32 @@
+{
+  "name": "my-strapi-project",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.4.0",
+    "@strapi/plugin-color-picker": "^5.4.2",
+    "@strapi/plugin-graphql": "^5.4.0",
+    "@strapi/plugin-users-permissions": "5.4.0",
+    "@strapi/strapi": "5.4.0",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "031f7af6-4173-4ff6-a49c-319795cb4f8f"
+  }
+}

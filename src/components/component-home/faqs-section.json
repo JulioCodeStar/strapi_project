@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_home_faqs_sections",
+  "info": {
+    "displayName": "FaqsSection"
+  },
+  "options": {},
+  "attributes": {
+    "etiqueta": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "Faqs": {
+      "displayName": "Faqs",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faqs"
+    }
+  }
+}

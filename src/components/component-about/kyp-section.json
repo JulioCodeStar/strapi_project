@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_component_about_kyp_sections",
+  "info": {
+    "displayName": "KYPSection"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "etiqueta": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "List": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-item"
+    }
+  }
+}

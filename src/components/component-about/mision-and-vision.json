@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_component_about_mision_and_visions",
+  "info": {
+    "displayName": "Mision&Vision"
+  },
+  "options": {},
+  "attributes": {
+    "etiqueta": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "ListItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icon-and-title-and-description"
+    },
+    "gallery": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

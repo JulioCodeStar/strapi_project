@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_home_our_services_sections",
+  "info": {
+    "displayName": "OurServicesSection"
+  },
+  "options": {},
+  "attributes": {
+    "etiqueta": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "Card": {
+      "displayName": "CardInfo",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card-info"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_redes_sociales",
+  "info": {
+    "displayName": "Redes Sociales"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

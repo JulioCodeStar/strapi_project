@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_icon_and_title_and_descriptions",
+  "info": {
+    "displayName": "Icon&Title&Description",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

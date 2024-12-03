@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_home_card_features",
+  "info": {
+    "displayName": "CardFeatures"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

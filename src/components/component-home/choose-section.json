@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_component_home_choose_sections",
+  "info": {
+    "displayName": "ChooseSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "etiqueta": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "ItemsInfo": {
+      "displayName": "Icon&Title&Description",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icon-and-title-and-description"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "NumberInfo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card-number"
+    }
+  }
+}

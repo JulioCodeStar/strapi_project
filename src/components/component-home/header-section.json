@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_component_home_header_sections",
+  "info": {
+    "displayName": "HeaderSection"
+  },
+  "options": {},
+  "attributes": {
+    "etiqueta": {
+      "type": "string"
+    },
+    "Titulo_1": {
+      "type": "string"
+    },
+    "Titulo_2": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "Boton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu-button"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

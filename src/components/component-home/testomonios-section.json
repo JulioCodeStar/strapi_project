@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_home_testomonios_sections",
+  "info": {
+    "displayName": "TestomoniosSection"
+  },
+  "options": {},
+  "attributes": {
+    "etiqueta": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "CardTestominios": {
+      "displayName": "Testimonicos",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.testimonicos"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_component_contact_contact_sections",
+  "info": {
+    "displayName": "ContactSection"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "InfoContact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icon-and-title-and-description"
+    }
+  }
+}

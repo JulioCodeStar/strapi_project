@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_home_our_team_sections",
+  "info": {
+    "displayName": "OurTeamSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Team": {
+      "displayName": "CardTeam",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card-team"
+    }
+  }
+}

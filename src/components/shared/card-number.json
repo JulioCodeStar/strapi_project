@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_card_numbers",
+  "info": {
+    "displayName": "CardNumber",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    }
+  }
+}

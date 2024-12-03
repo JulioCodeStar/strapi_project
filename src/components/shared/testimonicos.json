@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_testimonicos",
+  "info": {
+    "displayName": "Testimonicos",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "services": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

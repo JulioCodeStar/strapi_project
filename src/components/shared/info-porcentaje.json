@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_info_porcentajes",
+  "info": {
+    "displayName": "InfoPorcentaje"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "porcentaje": {
+      "type": "biginteger"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
