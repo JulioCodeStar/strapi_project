@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * contacto service
+ * contact service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::contacto.contacto');
+module.exports = createCoreService('api::contact.contact');

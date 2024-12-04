@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AboutDynamic": {
+      "type": "dynamiczone",
+      "components": [
+        "component-about.valores-section",
+        "component-about.mision-and-vision",
+        "component-about.kyp-section",
+        "component-about.hability-section"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

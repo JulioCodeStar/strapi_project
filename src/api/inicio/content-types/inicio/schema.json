@@ -10,54 +10,25 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
-    "title": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true,
-      "maxLength": 100,
-      "unique": false,
-      "minLength": 1
+    "InicioDynamic": {
+      "type": "dynamiczone",
+      "components": [
+        "component-home.testomonios-section",
+        "component-home.our-team-section",
+        "component-home.our-services-section",
+        "component-home.header-section",
+        "component-home.faqs-section",
+        "component-home.choose-section",
+        "component-home.card-features",
+        "component-home.about-section"
+      ]
     },
-    "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text",
-      "required": true
-    },
-    "banner_slide": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "cita_destacada": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "text"
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * nosotro controller
+ * contact controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::nosotro.nosotro');
+module.exports = createCoreController('api::contact.contact');

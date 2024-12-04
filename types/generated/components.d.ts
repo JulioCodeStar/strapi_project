@@ -59,15 +59,28 @@ export interface ComponentAboutValoresSection extends Struct.ComponentSchema {
 export interface ComponentContactContactSection extends Struct.ComponentSchema {
   collectionName: 'components_component_contact_contact_sections';
   info: {
+    description: '';
     displayName: 'ContactSection';
   };
   attributes: {
     description: Schema.Attribute.String;
+    img_contact_form: Schema.Attribute.Media<'images' | 'files'>;
     InfoContact: Schema.Attribute.Component<
       'shared.icon-and-title-and-description',
       true
     >;
     titulo: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentContactSedeSection extends Struct.ComponentSchema {
+  collectionName: 'components_component_contact_sede_sections';
+  info: {
+    description: '';
+    displayName: 'SedeSection';
+  };
+  attributes: {
+    Maps: Schema.Attribute.Component<'shared.maps', true>;
   };
 }
 
@@ -90,12 +103,14 @@ export interface ComponentHomeAboutSection extends Struct.ComponentSchema {
 export interface ComponentHomeCardFeatures extends Struct.ComponentSchema {
   collectionName: 'components_component_home_card_features';
   info: {
+    description: '';
     displayName: 'CardFeatures';
   };
   attributes: {
-    description: Schema.Attribute.String;
-    icon: Schema.Attribute.Media<'images'>;
-    titulo: Schema.Attribute.String;
+    Card: Schema.Attribute.Component<
+      'shared.icon-and-title-and-description',
+      true
+    >;
   };
 }
 
@@ -320,6 +335,43 @@ export interface SharedListItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMaps extends Struct.ComponentSchema {
+  collectionName: 'components_shared_maps';
+  info: {
+    description: '';
+    displayName: 'Maps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    direccion: Schema.Attribute.Text;
+    link_iframe_maps: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedOpenGraph extends Struct.ComponentSchema {
+  collectionName: 'components_shared_open_graphs';
+  info: {
+    displayName: 'openGraph';
+    icon: 'project-diagram';
+  };
+  attributes: {
+    og_description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    og_image: Schema.Attribute.Media<'images'>;
+    og_title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 70;
+      }>;
+    og_type: Schema.Attribute.String;
+    og_url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedRedesSociales extends Struct.ComponentSchema {
   collectionName: 'components_shared_redes_sociales';
   info: {
@@ -328,6 +380,34 @@ export interface SharedRedesSociales extends Struct.ComponentSchema {
   attributes: {
     name: Schema.Attribute.String;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'search';
+  };
+  attributes: {
+    canonicalURL: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    metaDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+        minLength: 50;
+      }>;
+    metaImage: Schema.Attribute.Media<'images'>;
+    metaRobots: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaViewport: Schema.Attribute.String;
+    openGraph: Schema.Attribute.Component<'shared.open-graph', false>;
+    structuredData: Schema.Attribute.JSON;
   };
 }
 
@@ -364,6 +444,7 @@ declare module '@strapi/strapi' {
       'component-about.mision-and-vision': ComponentAboutMisionAndVision;
       'component-about.valores-section': ComponentAboutValoresSection;
       'component-contact.contact-section': ComponentContactContactSection;
+      'component-contact.sede-section': ComponentContactSedeSection;
       'component-home.about-section': ComponentHomeAboutSection;
       'component-home.card-features': ComponentHomeCardFeatures;
       'component-home.choose-section': ComponentHomeChooseSection;
@@ -383,7 +464,10 @@ declare module '@strapi/strapi' {
       'shared.icon-and-title-and-description': SharedIconAndTitleAndDescription;
       'shared.info-porcentaje': SharedInfoPorcentaje;
       'shared.list-item': SharedListItem;
+      'shared.maps': SharedMaps;
+      'shared.open-graph': SharedOpenGraph;
       'shared.redes-sociales': SharedRedesSociales;
+      'shared.seo': SharedSeo;
       'shared.testimonicos': SharedTestimonicos;
       'shared.title-and-description': SharedTitleAndDescription;
     }

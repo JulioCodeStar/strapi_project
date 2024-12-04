@@ -1,7 +1,8 @@
 {
   "collectionName": "components_component_contact_contact_sections",
   "info": {
-    "displayName": "ContactSection"
+    "displayName": "ContactSection",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,6 +16,14 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.icon-and-title-and-description"
+    },
+    "img_contact_form": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

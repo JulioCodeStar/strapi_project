@@ -1,22 +1,15 @@
 {
   "collectionName": "components_component_home_card_features",
   "info": {
-    "displayName": "CardFeatures"
+    "displayName": "CardFeatures",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "icon": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "titulo": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
+    "Card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icon-and-title-and-description"
     }
   }
 }

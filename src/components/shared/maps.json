@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_maps",
+  "info": {
+    "displayName": "Maps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "direccion": {
+      "type": "text"
+    },
+    "link_iframe_maps": {
+      "type": "text"
+    }
+  }
+}

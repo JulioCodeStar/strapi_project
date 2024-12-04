@@ -369,6 +369,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutAbout extends Struct.SingleTypeSchema {
+  collectionName: 'abouts';
+  info: {
+    displayName: 'About';
+    pluralName: 'abouts';
+    singularName: 'about';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AboutDynamic: Schema.Attribute.DynamicZone<
+      [
+        'component-about.valores-section',
+        'component-about.mision-and-vision',
+        'component-about.kyp-section',
+        'component-about.hability-section',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
@@ -400,43 +433,31 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiContactoContacto extends Struct.SingleTypeSchema {
-  collectionName: 'contactos';
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
   info: {
-    description: '';
-    displayName: 'Contacto';
-    pluralName: 'contactos';
-    singularName: 'contacto';
+    displayName: 'Contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    contact_form_text: Schema.Attribute.Text;
+    ContactDynamic: Schema.Attribute.DynamicZone<
+      ['component-contact.sede-section', 'component-contact.contact-section']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    direccion: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    email: Schema.Attribute.Email & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::contacto.contacto'
+      'api::contact.contact'
     > &
       Schema.Attribute.Private;
-    location_map: Schema.Attribute.Blocks;
-    phone: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 15;
-        minLength: 9;
-      }>;
     publishedAt: Schema.Attribute.DateTime;
-    social_links: Schema.Attribute.Component<'shared.redes-sociales', true>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -454,49 +475,30 @@ export interface ApiInicioInicio extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
   attributes: {
-    banner_slide: Schema.Attribute.Media<'images' | 'files', true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    cita_destacada: Schema.Attribute.Text &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::inicio.inicio'>;
+    InicioDynamic: Schema.Attribute.DynamicZone<
+      [
+        'component-home.testomonios-section',
+        'component-home.our-team-section',
+        'component-home.our-services-section',
+        'component-home.header-section',
+        'component-home.faqs-section',
+        'component-home.choose-section',
+        'component-home.card-features',
+        'component-home.about-section',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::inicio.inicio'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-        minLength: 1;
-      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -530,76 +532,6 @@ export interface ApiMainMenuMainMenu extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-  };
-}
-
-export interface ApiNosotroNosotro extends Struct.SingleTypeSchema {
-  collectionName: 'nosotros';
-  info: {
-    description: '';
-    displayName: 'about';
-    pluralName: 'nosotros';
-    singularName: 'nosotro';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    history: Schema.Attribute.Blocks &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::nosotro.nosotro'
-    >;
-    mission: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    team_images: Schema.Attribute.Media<'images' | 'files', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-        minLength: 1;
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    vision: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
   };
 }
 
@@ -1144,11 +1076,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about.about': ApiAboutAbout;
       'api::blog.blog': ApiBlogBlog;
-      'api::contacto.contacto': ApiContactoContacto;
+      'api::contact.contact': ApiContactContact;
       'api::inicio.inicio': ApiInicioInicio;
       'api::main-menu.main-menu': ApiMainMenuMainMenu;
-      'api::nosotro.nosotro': ApiNosotroNosotro;
       'api::section.section': ApiSectionSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
