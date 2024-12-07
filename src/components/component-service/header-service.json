@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_service_header_services",
+  "info": {
+    "displayName": "HeaderService"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

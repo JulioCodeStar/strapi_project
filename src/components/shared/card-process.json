@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_card_processes",
+  "info": {
+    "displayName": "CardProcess",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "numberprocess": {
+      "type": "integer",
+      "default": 1
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

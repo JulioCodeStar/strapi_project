@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "icon": {
-      "type": "string"
-    },
     "titulo": {
       "type": "string"
     },
@@ -20,6 +17,15 @@
       "type": "string"
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "icon": {
       "allowedTypes": [
         "images",
         "files"

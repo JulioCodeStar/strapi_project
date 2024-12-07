@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_service_description_services",
+  "info": {
+    "displayName": "DescriptionService"
+  },
+  "options": {},
+  "attributes": {
+    "etiqueta": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.list-item"
+    }
+  }
+}

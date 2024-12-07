@@ -196,6 +196,72 @@ export interface ComponentHomeTestomoniosSection
   };
 }
 
+export interface ComponentServiceDescriptionService
+  extends Struct.ComponentSchema {
+  collectionName: 'components_component_service_description_services';
+  info: {
+    displayName: 'DescriptionService';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    etiqueta: Schema.Attribute.String;
+    list: Schema.Attribute.Component<'shared.list-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentServiceHeaderService extends Struct.ComponentSchema {
+  collectionName: 'components_component_service_header_services';
+  info: {
+    displayName: 'HeaderService';
+  };
+  attributes: {
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface ComponentServiceProcessService extends Struct.ComponentSchema {
+  collectionName: 'components_component_service_process_services';
+  info: {
+    displayName: 'ProcessService';
+  };
+  attributes: {
+    Card: Schema.Attribute.Component<'shared.card-process', true>;
+    etiqueta: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentServiceProductsService
+  extends Struct.ComponentSchema {
+  collectionName: 'components_component_service_products_services';
+  info: {
+    description: '';
+    displayName: 'ProductsService';
+  };
+  attributes: {
+    ProductServiceCard: Schema.Attribute.Component<
+      'shared.card-product-service',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentServiceSubscripsService
+  extends Struct.ComponentSchema {
+  collectionName: 'components_component_service_subscrips_services';
+  info: {
+    displayName: 'SubscripsService';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'menu.menu-button', false>;
+    subtitle: Schema.Attribute.Text;
+    title_1: Schema.Attribute.String;
+    title_2: Schema.Attribute.String;
+  };
+}
+
 export interface MenuDropdown extends Struct.ComponentSchema {
   collectionName: 'components_menu_dropdowns';
   info: {
@@ -254,7 +320,7 @@ export interface SharedCardInfo extends Struct.ComponentSchema {
   };
   attributes: {
     descripcion: Schema.Attribute.Text;
-    icon: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files'>;
     img: Schema.Attribute.Media<'images' | 'files'>;
     titulo: Schema.Attribute.String;
     url: Schema.Attribute.String;
@@ -270,6 +336,37 @@ export interface SharedCardNumber extends Struct.ComponentSchema {
   attributes: {
     number: Schema.Attribute.String;
     titulo: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCardProcess extends Struct.ComponentSchema {
+  collectionName: 'components_shared_card_processes';
+  info: {
+    displayName: 'CardProcess';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files'>;
+    numberprocess: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCardProductService extends Struct.ComponentSchema {
+  collectionName: 'components_shared_card_product_services';
+  info: {
+    description: '';
+    displayName: 'CardProductService';
+    icon: 'bell';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'menu.menu-button', false>;
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    img: Schema.Attribute.Media<'images' | 'files'>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -453,12 +550,19 @@ declare module '@strapi/strapi' {
       'component-home.our-services-section': ComponentHomeOurServicesSection;
       'component-home.our-team-section': ComponentHomeOurTeamSection;
       'component-home.testomonios-section': ComponentHomeTestomoniosSection;
+      'component-service.description-service': ComponentServiceDescriptionService;
+      'component-service.header-service': ComponentServiceHeaderService;
+      'component-service.process-service': ComponentServiceProcessService;
+      'component-service.products-service': ComponentServiceProductsService;
+      'component-service.subscrips-service': ComponentServiceSubscripsService;
       'menu.dropdown': MenuDropdown;
       'menu.link': MenuLink;
       'menu.menu-button': MenuMenuButton;
       'menu.menu-link': MenuMenuLink;
       'shared.card-info': SharedCardInfo;
       'shared.card-number': SharedCardNumber;
+      'shared.card-process': SharedCardProcess;
+      'shared.card-product-service': SharedCardProductService;
       'shared.card-team': SharedCardTeam;
       'shared.faqs': SharedFaqs;
       'shared.icon-and-title-and-description': SharedIconAndTitleAndDescription;

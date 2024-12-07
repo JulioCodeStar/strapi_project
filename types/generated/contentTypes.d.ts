@@ -535,6 +535,44 @@ export interface ApiMainMenuMainMenu extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPageServicePageService extends Struct.CollectionTypeSchema {
+  collectionName: 'page_services';
+  info: {
+    displayName: 'PageService';
+    pluralName: 'page-services';
+    singularName: 'page-service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::page-service.page-service'
+    > &
+      Schema.Attribute.Private;
+    pageServiceSection: Schema.Attribute.DynamicZone<
+      [
+        'component-service.subscrips-service',
+        'component-service.products-service',
+        'component-service.process-service',
+        'component-service.header-service',
+        'component-service.description-service',
+        'component-home.faqs-section',
+        'component-home.our-team-section',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSectionSection extends Struct.CollectionTypeSchema {
   collectionName: 'sections';
   info: {
@@ -1081,6 +1119,7 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::inicio.inicio': ApiInicioInicio;
       'api::main-menu.main-menu': ApiMainMenuMainMenu;
+      'api::page-service.page-service': ApiPageServicePageService;
       'api::section.section': ApiSectionSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

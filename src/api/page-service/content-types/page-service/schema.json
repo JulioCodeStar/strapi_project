@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_services",
+  "info": {
+    "singularName": "page-service",
+    "pluralName": "page-services",
+    "displayName": "PageService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageServiceSection": {
+      "type": "dynamiczone",
+      "components": [
+        "component-service.subscrips-service",
+        "component-service.products-service",
+        "component-service.process-service",
+        "component-service.header-service",
+        "component-service.description-service",
+        "component-home.faqs-section",
+        "component-home.our-team-section"
+      ]
+    }
+  }
+}

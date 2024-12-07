@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_component_service_subscrips_services",
+  "info": {
+    "displayName": "SubscripsService"
+  },
+  "options": {},
+  "attributes": {
+    "title_1": {
+      "type": "string"
+    },
+    "title_2": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "menu.menu-button"
+    }
+  }
+}
